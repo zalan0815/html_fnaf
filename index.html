@@ -9,19 +9,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container mx-auto">
         <div class="row">
-            <div id="bgomb" class="col-2">
-                <button onclick="balra()"> &longleftarrow; </button>
+            <div class="col px-0 my-auto">
+                <button onclick="balra()" class="mx-auto p-5 d-block"> &longleftarrow; </button>          
             </div>
-            <div id="jatek" class="col-8">
-                    <img id="img" src="/images/kozep/kozep office nyitva.png">
+            <div class="col-8 p-0">
+                <img id="img" class="mx-auto d-block w-95" src="/images/kozep/kozep office nyitva.png">          
             </div>
-            <div id="jgomb" class="col-2">
-                <button onclick="jobbra()"> &longrightarrow; </button>
+            <div class="col px-0 my-auto">
+                <button onclick="jobbra()" class="mx-auto p-5 d-block"> &longrightarrow; </button>          
             </div>
         </div>
     </div>
+    <!-- <div class="container m-0">
+        <div class="row">
+            <div id="bgomb" class="col">
+                <button onclick="balra()" class="mx-auto"> &longleftarrow; </button>
+            </div>
+            <div id="jatek" class="col">
+                    <img id="img" class="mx-auto d-block" src="/images/kozep/kozep office nyitva.png">
+            </div>
+            <div id="jgomb" class="col">
+                <button onclick="jobbra()"> &longrightarrow; </button>
+            </div>
+        </div>
+    </div> -->
     <script src="asd.js"></script>
     <!-- <script type="text/javascript">
         function changeImage(a) {

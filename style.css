@@ -1,12 +1,6 @@
-#menu {
-    width: 100%;
+body {
+    background-color: lightskyblue;
 }
-#jatek {
-    width: 100%;
-}
-#img {
-    width: 436pt;
-}
-.margin {
-    margin-left: auto;
+.w-95 {
+    width: 95%;
 }
