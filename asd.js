@@ -30,3 +30,12 @@ function jobbra() {
     }
     setCam();
 };
+
+window.onkeydown = function(e) {
+    if (e.keyCode == "39" || e.keyCode== "68"){
+        jobbra()
+    }
+    else if (e.keyCode == "37" || e.keyCode== "65"){
+        balra()
+    }
+}
