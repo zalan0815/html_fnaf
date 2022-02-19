@@ -2,6 +2,22 @@ body {
     background-color: lightskyblue;
     overflow: hidden;
 }
+.w-50 {
+    width: 50%;
+}
 .w-95 {
     width: 95%;
+}
+.bg-sotet {
+    background-color: rgba(10, 10, 10, 1);
+}
+.legomb {
+    position: absolute;
+    top: 95%;
+    left: 25%;
+}
+.felgomb {
+    position: absolute;
+    top: 110%;
+    left: 25%;
 }
