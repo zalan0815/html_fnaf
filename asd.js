@@ -44,12 +44,16 @@ function jobbra() {
 
 function lampa() {
     document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 0)";
+    audio.play()
 };
 function lampa2() {
     document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 1)";
+    audio.play()
 };
 
 //ide majd a jumpscare-k kellenek, mert most csak fel/le teker, de meg kell csinálni, hogy aktív kamerát adjon stb
+var audio = new Audio('asd.mov');
+audio.play();
 
 var canOpen = true;
 
