@@ -37,6 +37,13 @@ function jobbra() {
     setOffice();
 };
 
+function lampa() {
+    document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 0)";
+};
+function lampa2() {
+    document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 1)";
+};
+
 //ide majd a jumpscare-k kellenek, mert most csak fel/le teker, de meg kell csinálni, hogy aktív kamerát adjon stb
 
 var canOpen = true;
