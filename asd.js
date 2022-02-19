@@ -30,22 +30,23 @@ function changeImage2(a) {
 
 function setOffice(){
     var ob = 0;
-    var oj = 0;
-    
-    lampaOn ? ob+=1:false;
-
 
     if(kamera == 0){
         changeImage(irodaKOZEP);
     }
     else if(kamera == 1){
-
-        changeImage(irodaJOBB[0]);
-        changeImage2("./images/jobb/freddy.png");
+        ob = lampaOn ? ob+=1:ob+=0;
+        ob = doors[1] ? ob+=2:ob+=0;
+        
+        changeImage(irodaJOBB[ob]);
+        changeImage2('url("./images/jobb/freddy.png")');
     }
     else if(kamera == -1){
-        changeImage(irodaBAL[0]);
-        changeImage2("./images/bal/freddy.png");
+        ob = lampaOn ? ob+=1:ob+=0;
+        ob = doors[0] ? ob+=2:ob+=0;
+
+        changeImage(irodaBAL[ob]);
+        changeImage2('url("./images/bal/freddy.png")');
     }
 };
 
@@ -64,6 +65,16 @@ function jobbra() {
     setOffice();
 };
 
+function ajto(){
+    if(kamera == -1){
+        doors[0] = doors[0] ? false:true;
+    }
+    else if(kamera == 1){
+        doors[1] = doors[1] ? false:true;
+    }
+    setOffice();
+}
+
 function lampa() {
     lampaOn = true;
     if(kamera == -1 || kamera == 1){
@@ -76,6 +87,7 @@ function lampa2() {
     document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 1)";
         //audio.play()
     lampaOn = false;
+    setOffice();
 };
 
 //ide majd a jumpscare-k kellenek, mert most csak fel/le teker, de meg kell csinálni, hogy aktív kamerát adjon stb
