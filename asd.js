@@ -9,6 +9,9 @@ var kamera = 0;
 function changeImage(a) {
     document.getElementById("img").src=a;
 };
+function changeImage2(a) {
+    document.getElementById("hatter").style.backgroundImage = a;
+};
 
 function setOffice(){
     if(kamera == 0){
@@ -16,9 +19,11 @@ function setOffice(){
     }
     else if(kamera == 1){
         changeImage("/images/jobb/jobb office nyitva.png");
+        changeImage2("url('/images/jobb/freddy.png')");
     }
     else if(kamera == -1){
         changeImage("/images/bal/bal office nyitva.png");
+        changeImage2("url('/images/bal/freddy.png')");
     }
 };
 
