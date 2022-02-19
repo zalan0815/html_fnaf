@@ -3,7 +3,22 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+var irodaBAL = ["./images/bal/bal office nyitva.png","./images/bal/bal office lampa.png","./images/bal/bal office zarva.png","./images/bal/bal office zarva lampa.png"];
+var irodaJOBB = ["./images/jobb/jobb office nyitva.png","./images/jobb/jobb office lampa.png","./images/jobb/jobb office zarva.png","./images/jobb/jobb office zarva lampa.png"];
+var irodaKOZEP = "./images/kozep/kozep office nyitva.png";
+
+var doors = [false, false];
+
+var lampaOn = false;
 //alap irodai dolgok
+
+//#region debug itt igazából majd tesztelő cuccok lehetnek or idk
+function debug1(szam){
+    szam = Number(szam);
+    changeImage(irodaKOZEP[szam]);
+}
+
+//#endregion debug
 
 var kamera = 0;
 function changeImage(a) {
@@ -14,16 +29,23 @@ function changeImage2(a) {
 };
 
 function setOffice(){
+    var ob = 0;
+    var oj = 0;
+    
+    lampaOn ? ob+=1:false;
+
+
     if(kamera == 0){
-        changeImage("/images/kozep/kozep office nyitva.png");
+        changeImage(irodaKOZEP);
     }
     else if(kamera == 1){
-        changeImage("/images/jobb/jobb office nyitva.png");
-        changeImage2("url('/images/jobb/freddy.png')");
+
+        changeImage(irodaJOBB[0]);
+        changeImage2("./images/jobb/freddy.png");
     }
     else if(kamera == -1){
-        changeImage("/images/bal/bal office nyitva.png");
-        changeImage2("url('/images/bal/freddy.png')");
+        changeImage(irodaBAL[0]);
+        changeImage2("./images/bal/freddy.png");
     }
 };
 
@@ -43,17 +65,22 @@ function jobbra() {
 };
 
 function lampa() {
-    document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 0)";
-    audio.play()
+    lampaOn = true;
+    if(kamera == -1 || kamera == 1){
+        document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 0)";
+        audio.play()
+        setOffice();
+    }
 };
 function lampa2() {
     document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 1)";
-    audio.play()
+        //audio.play()
+    lampaOn = false;
 };
 
 //ide majd a jumpscare-k kellenek, mert most csak fel/le teker, de meg kell csinálni, hogy aktív kamerát adjon stb
 var audio = new Audio('asd.mov');
-audio.play();
+    //audio.play();
 
 var canOpen = true;
 
