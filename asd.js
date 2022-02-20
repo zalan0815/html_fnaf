@@ -12,6 +12,8 @@ var doors = [false, false];
 var lampaOn = false;
 //alap irodai dolgok
 
+var audio2 = new Audio('ajto.mov');
+
 //#region debug itt igazából majd tesztelő cuccok lehetnek or idk
 function debug1(szam){
     szam = Number(szam);
@@ -68,9 +70,11 @@ function jobbra() {
 function ajto(){
     if(kamera == -1){
         doors[0] = doors[0] ? false:true;
+        audio2.play()
     }
     else if(kamera == 1){
         doors[1] = doors[1] ? false:true;
+        audio2.play()
     }
     setOffice();
 }
@@ -91,7 +95,7 @@ function lampa2() {
 };
 
 //ide majd a jumpscare-k kellenek, mert most csak fel/le teker, de meg kell csinálni, hogy aktív kamerát adjon stb
-var audio = new Audio('asd.mov');
+var audio = new Audio('ajtonalvanacig.mov');
     //audio.play();
 
 var canOpen = true;

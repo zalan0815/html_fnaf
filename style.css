@@ -26,3 +26,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.nyil {
+    float: left;
+}
+.gombok {
+    float: right;
+}
+#gomb {
+    border-radius: 10px;
+    background-color: gray;
+}

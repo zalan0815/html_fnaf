@@ -14,8 +14,11 @@
     <div class="container mx-auto mb-3">
         <div class="row mb-5">
             <div class="col px-0 my-auto">
-                <button onclick="balra()" class="mx-auto p-5 d-block"> &longleftarrow; </button>
-                <button onmousedown="lampa()" onmouseup="lampa2()">lampa</button>          
+                <button onclick="balra()" class="ms-auto p-5 d-block nyil" id="gomb"> &longleftarrow; </button>
+                <div class="gombok">
+                    <button id="gomb" onclick="ajto()">DOOR</button> <br>
+                    <button id="gomb" onmousedown="lampa()" onmouseup="lampa2()">LAMP</button>          
+                </div>
             </div>
             <div class="col-8 p-0" id="hatter">
                 <div class="w-100 bg-sotet" id="sotet">
@@ -27,6 +30,7 @@
             </div>
             <div class="col px-0 my-auto">
                 <button onclick="jobbra()" class="mx-auto p-5 d-block"> &longrightarrow; </button> 
+                <button onclick="ajto()">ajto</button>
                 <button onmousedown="lampa()" onmouseup="lampa2()">lampa</button>         
             </div>
         </div>
