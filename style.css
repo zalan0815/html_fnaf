@@ -26,13 +26,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-.nyil {
-    float: left;
-}
-.gombok {
-    float: right;
-}
 #gomb {
-    border-radius: 10px;
+    float: right;
+    width: 100%;
+    padding: 16.4%;
+    border: none;
+    color: black !important; 
+}
+.gomb1 {
+    background-color: red;
+}
+.gomb2 {
     background-color: gray;
 }

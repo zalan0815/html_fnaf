@@ -13,12 +13,12 @@
 
     <div class="container mx-auto mb-3">
         <div class="row mb-5">
-            <div class="col px-0 my-auto">
-                <button onclick="balra()" class="ms-auto p-5 d-block nyil" id="gomb"> &longleftarrow; </button>
-                <div class="gombok">
-                    <button id="gomb" onclick="ajto()">DOOR</button> <br>
-                    <button id="gomb" onmousedown="lampa()">LAMP</button>          
-                </div>
+            <div class="col-1 px-0 my-auto">
+                <button onclick="balra()" class="p-5 nyil bg-primary" id="gomb"> &longleftarrow; </button>
+            </div>
+            <div class="col-1 px-0 my-auto gombok">
+                    <button id="gomb" class="gomb1 gombb" onclick="ajto()">DOOR</button> <br>
+                    <button id="gomb" class="gomb2" onmousedown="lampa()" onmouseup="lampa2()">LIGHT</button>          
             </div>
             <div class="col-8 p-0" id="hatter">
                 <div class="w-100 bg-sotet" id="sotet">
@@ -28,10 +28,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col px-0 my-auto">
-                <button onclick="jobbra()" class="mx-auto p-5 d-block"> &longrightarrow; </button> 
-                <button onclick="ajto()">ajto</button>
-                <button onmousedown="lampa()">lampa</button>         
+            <div class="col-1 px-0 my-auto gombok">
+                    <button id="gomb" class="gomb1 gombb" onclick="ajto()">DOOR</button> <br>
+                    <button id="gomb" class="gomb2" onmousedown="lampa()" onmouseup="lampa2()">LIGHT</button>          
+            </div>
+            <div class="col-1 px-0 my-auto">
+                <button onclick="jobbra()" class="p-5 nyil bg-primary" id="gomb"> &longrightarrow; </button>
             </div>
         </div>
         <div class="row mt-5">
