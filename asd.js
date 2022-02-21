@@ -10,6 +10,7 @@ var irodaKOZEP = "./images/kozep/kozep office nyitva.png";
 var doors = [false, false];
 
 var lampaOn = false;
+var energyUsage = 1;
 //alap irodai dolgok
 
 var audio2 = new Audio('ajto.mov');
@@ -34,6 +35,9 @@ function setOffice(){
     var ob = 0;
 
     if(kamera == 0){
+        if(lampaOn){
+            lampa();
+        }
         changeImage(irodaKOZEP);
     }
     else if(kamera == 1){
@@ -53,47 +57,60 @@ function setOffice(){
 };
 
 function balra() {
-    kamera -= 1
+    kamera -= 1;
     if(kamera < -1){
-        kamera+= 1
+        kamera+= 1;
     }
     setOffice();
 };
 function jobbra() {
-    kamera += 1
+    kamera += 1;
     if(kamera > 1){
-        kamera-= 1
+        kamera-= 1;
     }
     setOffice();
 };
 
 function ajto(){
     if(kamera == -1){
+        energyUsage += doors[0] ? -1:1;
         doors[0] = doors[0] ? false:true;
-        audio2.play()
+        audio2.play();
     }
     else if(kamera == 1){
+        energyUsage += doors[1] ? -1:1;
         doors[1] = doors[1] ? false:true;
-        audio2.play()
+        audio2.play();
     }
     setOffice();
+    console.log(energyUsage);
 }
 
 function lampa() {
-    lampaOn = true;
     if(kamera == -1 || kamera == 1){
-        document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 0)";
-        audio.play()
+        audio.play();
+
+        if(lampaOn){
+            lampaOn = false;
+            document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 1)";
+            energyUsage -= 1;
+        }
+        else{
+            lampaOn = true;
+            document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 0)";
+            energyUsage += 1;
+        }
         setOffice();
     }
+    else if(kamera == 0){
+        if(lampaOn){
+            lampaOn = false;
+            document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 1)";
+            energyUsage -= 1;
+        }
+    }
+    console.log(energyUsage);
 };
-function lampa2() {
-    document.getElementById("sotet").style.backgroundColor = "rgba(10, 10, 10, 1)";
-        //audio.play()
-    lampaOn = false;
-    setOffice();
-};
-
 //ide majd a jumpscare-k kellenek, mert most csak fel/le teker, de meg kell csinálni, hogy aktív kamerát adjon stb
 var audio = new Audio('ajtonalvanacig.mov');
     //audio.play();
